@@ -1,0 +1,17 @@
+.city-info-wrapper {
+    align-items: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.city-info-wrapper .city-name {
+    font-size: 40px;
+    margin: 0;
+}
+
+.city-info-wrapper .date-time {
+    font-size: 15px;
+    margin-top: 5px;
+}

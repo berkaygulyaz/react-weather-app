@@ -1,0 +1,35 @@
+.boxes-wrapper {
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+.boxes-wrapper .box {
+    align-items: center;
+    border: 1px solid #ffffff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+    width: 20%;
+}
+
+.day-name {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 15px;
+}
+
+.weather-rating {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.date {
+    bottom: 15px;
+    position: absolute;
+}
