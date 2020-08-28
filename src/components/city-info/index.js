@@ -2,6 +2,31 @@ import React, { Component } from "react";
 import './style.css';
 
 class CityInfo extends Component{
+
+    state= {
+        coords: {
+            latitude: 45,
+            longtitude: 60
+        }
+    }
+
+    componentDidMount() {
+
+        // Get Location
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                let newCoords = {
+                    latitude: position.coords.latitude,
+                    longtitude: position.coords.longitude
+                }
+
+                this.setState({coords: newCoords})
+            })
+        } else {
+            console.log("Location Not Found")
+        }
+    }
+    
     render() {
         return(
             <div className="city-info-wrapper">
