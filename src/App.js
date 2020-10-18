@@ -26,18 +26,17 @@ class App extends Component {
                 }
 
                 this.setState({coords: newCoords})
-
-                Axios.get(`http://api.weatherstack.com/current?access_key=062a378feeaaea0e3223c1b5aaf158ca&query=${this.state.coords.latitude},${this.state.coords.longtitude}`).then(res => {
+                Axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.coords.latitude}&lon=${this.state.coords.longtitude}&exclude=hourly&appid=46470136edd4f53667ef9efa0cd415da&units=metric`).then(res => {
                     let weatherInfo = {
-                        location: res.data.location.region,
-                        country: res.data.location.country,
-                        temperature: res.data.current.temperature,
-                        time: res.data.location.localtime,
+                        location: res.data.timezone,
+                        daily: res.data.daily,
+                        currentDateTime: new Date().toLocaleString(),
                     }
                     this.setState({
                         data: weatherInfo
                     })
                     console.log(this.state.data)
+                    console.log(res)
                 })
 
             })
@@ -50,8 +49,8 @@ class App extends Component {
     return (
       <div className="weather-app-wrapper">
         <Container>
-          <CityInfo></CityInfo>
-          <Boxes></Boxes>
+          <CityInfo weatherData={this.state.data}></CityInfo>
+          <Boxes weatherData={this.state.data}></Boxes>
         </Container>
       </div>
     )

@@ -1,44 +1,25 @@
-import React, { Component } from "react";
-import Sun from '../../img/storm.png'
+import React, {  } from "react";
 import './style.css';
 
-class Boxes extends Component{
-    render() {
-        return(
-            <div className="boxes-wrapper">
-                <div className="box">
-                    <h3 className="day-name">Monday</h3>
-                    <img src={Sun} alt=""></img>
-                    <span className="weather-rating">25°</span>
-                    <small className="date">19 August 2020</small>
-                </div>
-                <div className="box">
-                    <h3 className="day-name">Monday</h3>
-                    <img src={Sun} alt=""></img>
-                    <span className="weather-rating">25°</span>
-                    <small className="date">19 August 2020</small>
-                </div>
-                <div className="box">
-                    <h3 className="day-name">Monday</h3>
-                    <img src={Sun} alt=""></img>
-                    <span className="weather-rating">25°</span>
-                    <small className="date">19 August 2020</small>
-                </div>
-                <div className="box">
-                    <h3 className="day-name">Monday</h3>
-                    <img src={Sun} alt=""></img>
-                    <span className="weather-rating">25°</span>
-                    <small className="date">19 August 2020</small>
-                </div>
-                <div className="box">
-                    <h3 className="day-name">Monday</h3>
-                    <img src={Sun} alt=""></img>
-                    <span className="weather-rating">25°</span>
-                    <small className="date">19 August 2020</small>
-                </div>
-            </div>
-        )
-    }
-}
+export default function Boxes(props){
 
-export default Boxes;
+    const {weatherData} = props;
+    const {daily} = weatherData;
+    return(
+        <div className="boxes-wrapper">
+            {
+                daily && daily.map((dailyItem) => {
+                    const myDate = new Date(dailyItem.dt * 1000);
+                    return (
+                    <div className="box">
+                        <h3 className="day-name">{myDate.toLocaleDateString()}</h3>
+                        <img src={`http://openweathermap.org/img/wn/`+ dailyItem.weather[0].icon + "@2x.png"} alt=""></img>
+                        <span className="weather-rating">{dailyItem.temp.max}° / {dailyItem.temp.min}°</span>
+                    </div>
+
+                    )
+                })
+            }
+        </div>
+    )
+}

@@ -12,6 +12,7 @@
     flex-direction: column;
     height: 300px;
     justify-content: center;
+    position: relative;
     width: 20%;
 }
 
@@ -32,4 +33,15 @@
 .date {
     bottom: 15px;
     position: absolute;
+}
+
+@media screen and (max-width: 767px) {
+    .boxes-wrapper {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    .boxes-wrapper .box {
+      flex-direction: column;  
+      width: 100%;
+    }
 }

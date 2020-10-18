@@ -1,13 +1,13 @@
-.container {
-    margin: 0 auto;
-    position: relative;
-    width: 1170px;
-}
-
 .weather-app-wrapper {
     align-items: center;
     display: flex;
     flex-direction: column;
     height: 100vh;
     justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+    .weather-app-wrapper {
+        height: 100%;
+    }
 }
