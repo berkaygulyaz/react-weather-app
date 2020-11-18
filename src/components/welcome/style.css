@@ -1,0 +1,23 @@
+.welcome-wrapper {
+    align-items: center;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.welcome-wrapper .request-text {
+    color: #fff;
+    margin-top: 15px;
+}
+
+.welcome-wrapper .wait-text {
+    color: #fff;
+    font-size: 25px;
+    margin-top: 15px;
+}

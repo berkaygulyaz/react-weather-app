@@ -3,7 +3,8 @@ import './App.css';
 import Axios from "axios"
 import Boxes from './components/boxes';
 import CityInfo from './components/city-info';
-import Container from './components/container'
+import Container from './components/container';
+import Welcome from './components/welcome';
 
 class App extends Component {
 
@@ -49,6 +50,7 @@ class App extends Component {
     return (
       <div className="weather-app-wrapper">
         <Container>
+          <Welcome weatherData={this.state.data}></Welcome>
           <CityInfo weatherData={this.state.data}></CityInfo>
           <Boxes weatherData={this.state.data}></Boxes>
         </Container>
