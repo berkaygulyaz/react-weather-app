@@ -1,7 +1,7 @@
 import React, { } from "react";
 import './style.css';
 
-export default function CityInfo(props){
+const CityInfo = (props) => {
 
     const {weatherData} = props;
     const {location} = weatherData;
@@ -12,3 +12,5 @@ export default function CityInfo(props){
         </div>
     )
 }
+
+export default CityInfo;

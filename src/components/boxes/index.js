@@ -1,7 +1,7 @@
 import React, {  } from "react";
 import './style.css';
 
-export default function Boxes(props){
+const Boxes = (props) => {
 
     const {weatherData} = props;
     const {daily} = weatherData;
@@ -23,3 +23,5 @@ export default function Boxes(props){
         </div>
     )
 }
+
+export default Boxes;

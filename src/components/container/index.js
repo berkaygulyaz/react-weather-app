@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import './style.css';
 
-class Container extends Component{
-    render() {
-        return(
-            <div className="container-fluid">
-                ${this.props.children}
-            </div>
-        )
-    }
+const Container = (props) => {
+    return(
+        <div className="container-fluid">
+            ${props.children}
+        </div>
+    )
 }
 
 export default Container;

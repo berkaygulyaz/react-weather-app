@@ -37,7 +37,7 @@ class App extends Component {
                         data: weatherInfo
                     })
                     console.log(this.state.data)
-                    console.log(res)
+                    console.log(res.data)
                 })
 
             })

@@ -2,7 +2,7 @@ import React, {  } from "react";
 import locationImg from '../../img/placeholder.png'
 import './style.css';
 
-export default function Welcome(props){
+const Welcome = (props) => {
     const {weatherData} = props;
     const {location} = weatherData;
     
@@ -25,3 +25,5 @@ export default function Welcome(props){
         
     )
 }
+
+export default Welcome;
