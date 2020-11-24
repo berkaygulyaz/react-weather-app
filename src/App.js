@@ -16,11 +16,11 @@ class App extends Component {
       data: {}
     }
 
-    componentDidMount() {
+    async componentDidMount() {
 
         // Get Location
         if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((position) => {
+          await navigator.geolocation.getCurrentPosition((position) => {
                 let newCoords = {
                     latitude: position.coords.latitude,
                     longtitude: position.coords.longitude
