@@ -2,12 +2,13 @@ import React, {  } from "react";
 import locationImg from '../../img/placeholder.png'
 import './style.css';
 
-const Welcome = (props) => {
-    const {weatherData} = props;
+const Welcome = (weatherData) => {
+    // const {weatherData} = props;
     const {location} = weatherData;
     
     return (
         <div>
+            berkay
             {
                 !location ? (
                     <div className="welcome-wrapper">

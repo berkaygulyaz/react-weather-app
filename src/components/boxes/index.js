@@ -1,17 +1,19 @@
 import React, {  } from "react";
+import shortId from "shortid"
 import './style.css';
 
-const Boxes = (props) => {
+const Boxes = ({weatherData}) => {
 
-    const {weatherData} = props;
-    const {daily} = weatherData;
+    // console.log(weatherData)
+    
     return(
         <div className="boxes-wrapper">
             {
-                daily && daily.map((dailyItem) => {
+                weatherData ? (
+                    weatherData && weatherData.map((dailyItem) => {
                     const myDate = new Date(dailyItem.dt * 1000);
                     return (
-                    <div className="box">
+                    <div className="box" key={shortId.generate()}>
                         <h3 className="day-name">{myDate.toLocaleDateString()}</h3>
                         <img src={`http://openweathermap.org/img/wn/`+ dailyItem.weather[0].icon + "@2x.png"} alt=""></img>
                         <span className="weather-rating">{dailyItem.temp.max}° / {dailyItem.temp.min}°</span>
@@ -19,6 +21,10 @@ const Boxes = (props) => {
 
                     )
                 })
+                ) : (
+                    console.log("Lokasyon Bilgisi Bulunamadı")
+                )
+                
             }
         </div>
     )

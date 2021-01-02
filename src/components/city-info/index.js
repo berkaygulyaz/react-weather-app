@@ -1,14 +1,17 @@
 import React, { } from "react";
 import './style.css';
 
-const CityInfo = (props) => {
-
-    const {weatherData} = props;
-    const {location} = weatherData;
+const CityInfo = ({yourLocation}) => {
 
     return(
         <div className="city-info-wrapper">
-            <h1 className="city-name">{location}</h1>
+            {
+               yourLocation ? (
+                    <h1 className="city-name">{yourLocation}</h1>
+               ) : (
+                   console.log("Lokasyon Bulunamadı")
+               )
+            }
         </div>
     )
 }
